@@ -22,6 +22,7 @@ margin-top: 100px;
     font-size: 1.5rem;
     margin-bottom: 10px;
     border-radius: 5px;
+    height: 1.7rem;
 }
 
 button{
@@ -29,10 +30,8 @@ button{
     height: 40px;
     margin: 2px;
 }
+
 .wide-button{
     width: 89px;
 }
 
-button.equal{
-    height: 80px;
-}
