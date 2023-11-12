@@ -3,14 +3,15 @@ const screen = document.querySelector('.screen');
 const operation = document.querySelectorAll('.operation');
 const equal = document.querySelector('.equal');
 const numbersArray = Array.from(numbers);
+const clear = document.querySelector('.clear');
+const deleteBtn = document.querySelector('.delete');
+
 
 let screenView = '';
 let numSave = '';
 let operationSave= '';
 let operatorArray = [];
 let nums = []
-let num1 = '';
-let num2 = '';
 let click = 0;
 let result =''
 let opCounter = 0;
@@ -28,6 +29,25 @@ const getNumbers = (array =>{
     })
   })
 })
+
+
+const clearFunction = () =>{
+  screenView = '';
+  numSave = '';
+  operationSave = '';
+  operatorArray = [];
+  nums = [];
+  result = [];
+  opCounter = 0;
+  screen.textContent = screenView;
+}
+
+const deleteFunction = () =>{
+  screenView = screenView.slice(0, -1);
+  screen.textContent = screenView;
+  console.log('asd')
+}
+
 
 getNumbers(numbersArray);
 
@@ -87,7 +107,18 @@ console.log(opCounter)
   
 
   screen.textContent = Math.round(result * 10000) / 10000;
+
+  operationSave = '';
+  screenView = screen.textContent;
+  numSave = ''
+  operatorArray = [];
 })
+
+
+clear.addEventListener('click', clearFunction);
+deleteBtn.addEventListener('click', deleteFunction)
+
+
 
 
 
