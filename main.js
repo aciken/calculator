@@ -53,16 +53,16 @@ equal.addEventListener('click', () =>{
                 .split('')
                 .slice(num1.length, numSave.length)
                 .join('')
-
+Math.floor
   console.log(num2)
   if(operationSave === '+'){
-    result = Number(num1) + Number(num2);
+    result = floor(Number(num1) ) + Number(num2);
   } else if(operationSave === '-'){
     result = Number(num1) - Number(num2);
   } else if(operationSave === 'X'){
     result = Number(num1) * Number(num2);
   } else result = Number(num1) / Number(num2);
-  screen.textContent = result;
+  screen.textContent = Math.round(result * 10000) / 10000;
 })
 
 
