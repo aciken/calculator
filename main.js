@@ -44,8 +44,22 @@ const clearFunction = () =>{
 
 const deleteFunction = () =>{
   screenView = screenView.slice(0, -1);
+ if(screenView.slice(0, -1) === '+' ||screenView.slice(0, -1) === '-' ||screenView.slice(0, -1) === 'X' ||screenView.slice(0, -1) === '/' ){
+  operatorArray = operatorArray.slice(0, -1);
+ } else if(numSave !== ''){
+  numSave = numSave
+                  .split('')
+                  .slice(0, -1)
+                  .join('')        
+ } else{
+  result = result.toString()
+                           .split('')
+                           .slice(0, -1)
+                           .join('');
+  nums = [result]
+ }
   screen.textContent = screenView;
-  console.log('asd')
+
 }
 
 
